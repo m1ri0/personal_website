@@ -1,0 +1,52 @@
+.terminal-container {
+  background-color: var(--bg-card);
+  border: 1px solid var(--red-muted);
+  border-radius: 4px; /* Bordas levemente retas */
+  width: 100%;
+  max-width: 650px;
+  /* Dica: Importe a fonte Fira Code no seu index.html */
+  font-family: 'Fira Code', 'Courier New', Courier, monospace;
+  box-shadow: 0 0 15px rgba(255, 42, 42, 0.05); /* Brilho vermelho muito sutil no fundo */
+}
+
+.terminal-header {
+  background-color: var(--bg-main);
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--red-muted);
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.dot-red { background-color: var(--red-primary); }
+.dot-muted { background-color: #333; }
+
+.terminal-body {
+  padding: 20px;
+  color: var(--text-main);
+  min-height: 150px;
+}
+
+.terminal-body pre {
+  margin: 0;
+  white-space: pre-wrap; /* Garante que o \n quebre a linha */
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.cursor {
+  color: var(--red-primary);
+  text-shadow: 0 0 8px rgba(255, 42, 42, 0.8);
+  animation: blink 1s step-end infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
