@@ -1,0 +1,56 @@
+.certificates-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.certificates-section > div {
+  background-color: var(--bg-card);
+  border: 1px solid var(--red-muted);
+  border-radius: 4px;
+  padding: 24px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 42, 42, 0.03);
+}
+
+.certificates-section > div:hover {
+  border-color: var(--red-primary);
+  box-shadow: 0 0 20px rgba(255, 42, 42, 0.15);
+  transform: translateY(-2px);
+}
+
+.bachelor-header,
+.english-header,
+.technical-header {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--red-muted);
+}
+
+.bachelor-header h3,
+.english-header h3,
+.technical-header h3 {
+  font-size: 1.25rem;
+  color: var(--red-primary);
+  font-family: 'Fira Code', monospace;
+  text-shadow: 0 0 8px rgba(255, 42, 42, 0.4);
+  margin-bottom: 4px;
+}
+
+.bachelor-header p,
+.english-header p,
+.technical-header p {
+  font-size: 0.85rem;
+  color: var(--text-secundary);
+  font-family: 'JetBrainsMono Nerd Font', 'Fira Code', monospace;
+}
+
+.bachelor-body,
+.english-body,
+.technical-body {
+  color: var(--text-main);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  font-family: 'JetBrainsMono Nerd Font', 'Fira Code', monospace;
+}

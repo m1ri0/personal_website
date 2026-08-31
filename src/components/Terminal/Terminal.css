@@ -1,12 +1,18 @@
 .terminal-container {
   background-color: var(--bg-card);
   border: 1px solid var(--red-muted);
-  border-radius: 4px; /* Bordas levemente retas */
+  border-radius: 0px;
   width: 100%;
-  max-width: 650px;
-  /* Dica: Importe a fonte Fira Code no seu index.html */
+  max-width: 950px;
   font-family: 'Fira Code', 'Courier New', Courier, monospace;
-  box-shadow: 0 0 15px rgba(255, 42, 42, 0.05); /* Brilho vermelho muito sutil no fundo */
+  box-shadow: 0 0 15px rgba(255, 42, 42, 0.05); /* Neon vermelho */
+
+  /* Animação */
+  opacity: 0;
+  transform: scale(0.3);
+  animation: bounceCenter 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  animation-delay: 2.4s; 
+  transform-origin: center center;
 }
 
 .terminal-header {
@@ -34,14 +40,14 @@
 
 .terminal-body pre {
   margin: 0;
-  white-space: pre-wrap; /* Garante que o \n quebre a linha */
+  white-space: pre-wrap; /* Faz o \n quebra a linha */
   font-size: 1rem;
   line-height: 1.5;
 }
 
 .cursor {
-  color: var(--red-primary);
-  text-shadow: 0 0 8px rgba(255, 42, 42, 0.8);
+  color: var(--text-main);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
   animation: blink 1s step-end infinite;
   margin-left: 2px;
 }
@@ -49,4 +55,24 @@
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
+}
+
+@keyframes bounceCenter {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  60% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

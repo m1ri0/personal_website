@@ -3,23 +3,33 @@ import './Terminal.css';
 
 export default function Terminal() {
   const [text, setText] = useState('');
-  // O \n cria a quebra de linha no terminal
-  const fullText = "root@portfolio:~$ ./iniciar_sistema.sh\n[+] Conexão estabelecida.\n[+] Acesso permitido.\n> Olá, eu sou o [Seu Nome].";
+  const [showText, setShowText] = useState(false);
+
+  const welcometext = "Welcome to Mário's portifolio!";
 
   useEffect(() => {
-    let index = 0;
+    const timer = setTimeout(() => {
+      setShowText(true);
+    }, 3000); // 2.4s delay + 0.6s anim = 3s total
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    if (!showText) return;
     
+    let index = 0;
     const interval = setInterval(() => {
-      setText(fullText.slice(0, index + 1));
+      setText(welcometext.slice(0, index + 1));
       index++;
       
-      if (index >= fullText.length) {
+      if (index >= welcometext.length) {
         clearInterval(interval);
       }
-    }, 60); // Ajuste este valor (em milissegundos) para alterar a velocidade da digitação
+    }, 60);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [showText]);
 
   return (
     <div className="terminal-container">
@@ -30,11 +40,11 @@ export default function Terminal() {
       </div>
       
       <div className="terminal-body">
-        <pre>
-          <span className="text-secundary"></span>
+        <h1>Connected</h1>
+        <p>
           {text}
           <span className="cursor">█</span>
-        </pre>
+        </p>
       </div>
     </div>
   );
