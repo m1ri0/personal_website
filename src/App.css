@@ -55,3 +55,15 @@
   );
   pointer-events: none;
 }
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.dot-red {
+  background-color: var(--red-primary);
+}
+.dot-muted {
+  background-color: #333;
+}
