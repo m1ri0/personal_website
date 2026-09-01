@@ -1,0 +1,43 @@
+.projects-split-view {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.projects-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.project-display-area {
+    flex: 2;
+    padding: 20px;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    min-height: 400px;
+}
+
+.project-info img {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.tech-stack {
+    margin: 20px 0;
+}
+
+.tech-stack div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tech-stack span {
+    background-color: #eee;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.85em;
+}
