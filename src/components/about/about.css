@@ -3,20 +3,21 @@
     display: flex;
     flex-direction: row;
     gap: 20px;
+    align-items: center;
 }
 
 .about-terminal {
     background-color: var(--bg-card);
     border: 1px solid var(--red-muted);
     border-radius: 0px;
-    align-items: left;
     width: 50%;
+    height: 100%;
     font-family: 'Fira Code', 'Courier New', Courier, monospace;
-    box-shadow: 0 0 15px rgba(255, 42, 42, 0.05);
+    box-shadow: 0 0 30px rgba(255, 42, 42, 0.1);
     margin: 0 auto;
 }
 
-.about-header {
+.about-terminal-header {
     background-color: var(--bg-main);
     padding: 8px 12px;
     border-bottom: 1px solid var(--red-muted);
@@ -24,23 +25,93 @@
     gap: 8px;
 }
 
-.about-body {
+.about-terminal-body {
     padding: 20px;
     color: var(--text-main);
     min-height: 150px;
 }
 
-.about-body p {
+.about-terminal-body p {
     margin: 0;
     white-space: pre-wrap;
     font-size: 1rem;
     line-height: 1.5;
 }
 
-.about-image {
+.terminal-text {
+    color: #E5E7EB;
+    text-shadow: 0 0 15px rgba(255, 42, 42, 0.8);
+}
+
+.about-stats {
     width: 50%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(255, 42, 42, 0.05);
-    margin: 0 auto;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-bottom: 5vh;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding-bottom: 8px;
+    position: relative;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.stat::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--red-primary);
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.stat:hover::after {
+    width: 100%;
+    left: 0%;
+}
+
+.stat:hover {
+    transform: scale(1.2);
+}
+
+.stat:hover .stat-value {
+    color: var(--red-bright);
+    text-shadow: 0 0 15px rgba(255, 42, 42, 0.8);
+}
+
+.stat-value {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--red-muted);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.stat-label {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+    }
+    
+    .about-terminal,
+    .about-image {
+        width: 100%;
+    }
+    
+    .about-image img {
+        width: 60%;
+    }
 }

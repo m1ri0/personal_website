@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import About from './components/about/about.jsx'
+import Projects from './components/projects/projects.jsx'
+import Contact from './components/contact/contact.jsx'
 import MatrixHero from './components/MatrixHero/MatrixHero.jsx'
-import Certificates from './components/Certificates/certificates.jsx'
 import './App.css'
 
 function App() {
@@ -18,10 +19,13 @@ function App() {
       <section id="center" className="App">
         <MatrixHero />
       </section>
-
       <section className="content-section">
         <div className="content-wrapper">
           <About />
+          <div className="sections-divider" />
+          <Projects />
+          <div className="sections-divider" />
+          <Contact />
         </div>
       </section>
 
