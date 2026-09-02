@@ -4,16 +4,15 @@ import './ProjectShowcase.css';
 const projects = [
     {
         id: 'neural-terminal',
-        name: 'neural-terminal',
-        tagline: 'AI-powered terminal with natural language understanding',
-        description: 'A terminal emulator that understands plain English commands and executes them safely. Built with WebLLM for local inference.',
-        longDescription: 'Neural Terminal bridges the gap between CLI power and natural language accessibility. Type "show me all python files modified last week" and it translates to `find . -name "*.py" -mtime -7`. Runs entirely in-browser using WebGPU-accelerated LLMs.',
-        tech: ['React 18', 'TypeScript', 'WebLLM', 'WebGPU', 'xterm.js', 'Tailwind'],
-        stats: { stars: 2.4, forks: 187, issues: 12 },
-        links: { github: '#', demo: '#', docs: '#' },
-        color: '#ff2a2a',
-        gradient: 'linear-gradient(135deg, #ff2a2a 0%, #ff6b35 100%)',
-        image: 'https://picsum.photos/seed/neural-terminal-1/800/600'
+        name: 'Nevermore/',
+        tagline: 'Domains Threat Intelligence Feed',
+        description: 'A Threat Intelligence Feed that aggregates useful informations about malicious domains in blocklists.',
+        longDescription: 'Each Domain is identified with their respective IP addresses, ASN, and geolocation, also providing the abuse type that the domain is associated with. Is a Open Source project that uses congregated blocklists to provide a comprehensive feed of malicious domains, helping security professionals and enthusiasts stay informed about potential threats.',
+        tech: ['Python', 'Poetry', 'FastAPI', 'SLQAlchemy', 'Async processes', 'PostgreSQL', 'Docker'],
+        links: { github: 'https://github.com/acmecr/nevermore', demo: '#', docs: '#' },
+        color: '#ffcc2a',
+        gradient: 'linear-gradient(135deg, #ffcc2a 0%, #fffd38 100%)',
+        image: 'src/assets/nevermore.jpeg'
     },
     {
         id: 'devflow-cli',
@@ -38,8 +37,7 @@ export default function ProjectsShowcase() {
         <div className="projects-container">
 
             <div className="projects-header">
-                <h2> ❯ tree -L 1 <span className="projects-header-command">projects/</span></h2>
-                <p className="projects-header-subtitle">Hover cards to preview • Click to expand details</p>
+                <h2> ❯ ls <span className="projects-header-command">mario/projects/</span></h2>
             </div>
 
             <div className="projects-split-view">
@@ -50,21 +48,25 @@ export default function ProjectsShowcase() {
                             className={`project-card ${activeId === project.id ? 'active' : ''}`}
                             onClick={() => setActiveId(project.id)}
                             style={{
-                                cursor: 'pointer',
-                                borderLeft: `4px solid ${project.color}`,
-                                padding: '15px',
-                                background: activeId === project.id ? '#f0f0f0' : 'transparent',
+                                background: activeId === project.id ? 'var(--red-muted)' : 'transparent',
+                                borderLeft: activeId === project.id ? '3px solid var(--red-primary)' : '3px solid var(--text-main)',
+                                borderWidth: activeId === project.id ? '5px' : '3px',
                             }}
                         >
-                            <h3 style={{ margin: '0 0 5px 0' }}>{project.name}</h3>
-                            <p style={{ margin: 0, fontSize: '0.9em' }}>{project.tagline}</p>
+                            <div>
+                                <img calssName="project-svgfolder" src={activeId === project.id ? '../../public/folder-svgrepo-open.svg' : '../../public/folder-svgrepo-close.svg'} alt='closed-folder' />
+                                </div>
+                            <div>
+                                <h3 style={{ margin: '0 0 5px 0' }}>{project.name}</h3>
+                                <p style={{ margin: 0, fontSize: '0.9em' }}>{project.tagline}</p>
+                            </div>
                         </div>
                     ))}
                 </div>
 
                 <div className="project-display-area">
                     {activeProject ? (
-                        <div className="project-info">
+                        <div key={activeProject.id} className="project-info">
                             <h2 style={{color: activeProject.color}}>{activeProject.name}</h2>
                             <p><strong>{activeProject.description}</strong></p>
                             <p>{activeProject.longDescription}</p>
@@ -84,10 +86,12 @@ export default function ProjectsShowcase() {
                                 src={activeProject.image}
                                 alt={activeProject.name}
                             />
+
+                            <p><a href={activeProject.links.github} target="_blank" rel="noopener noreferrer">View on Github</a></p>
                         </div>
                     ) : (
                         <div className="empty-state">
-                            <h3>⬅ Selecione um projeto ao lado para explorar</h3>
+                            
                         </div>
                     )}
                 </div>

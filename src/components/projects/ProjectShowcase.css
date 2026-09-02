@@ -1,3 +1,13 @@
+.projects-header h2 {
+    font-family: 'Fira Code', 'Courier New', Courier, monospace;;
+}
+
+.projects-header-command {
+    color: var(--text-main);
+    font-weight: 500;
+    text-shadow: 0 0 15px rgba(255, 42, 42, 0.8);
+}
+
 .projects-split-view {
     display: flex;
     align-items: flex-start;
@@ -8,25 +18,77 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 25px;
+}
+
+.projects-list img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    filter: brightness(0) invert(1);
+}
+
+.project-card-wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.project-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    padding: 15px;
+    transition: all 0.1s ease-in-out;
+}
+
+.project-card:hover {
+    background-color: var(--bg-card);
+    box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.3);
+    transform: scale(1.02);
+}
+
+.project-card.active:hover {
+    box-shadow: 10px 10px 10px rgba(255, 42, 42, 0.3);
 }
 
 .project-display-area {
     flex: 2;
-    padding: 20px;
-    border: 1px solid #eaeaea;
-    border-radius: 8px;
-    min-height: 400px;
+    min-height: 1400px;
+}
+
+.project-info {
+    overflow: hidden;
+    animation: openCard 0.5s ease-out forwards;
 }
 
 .project-info img {
     width: 100%;
     border-radius: 8px;
     margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.project-info a {
+    font-size: 1.2rem;
+    color: var(--text-main);
+    text-decoration: underline;
+    padding: 5px 5px;
+}
+
+.project-info a:hover {
+    color: var(--red-primary);
+    transform: scale(1.2);
+    transition: all 0.2s ease-in-out;
 }
 
 .tech-stack {
     margin: 20px 0;
+}
+
+.tech-stack h4 {
+    margin-bottom: 10px;
 }
 
 .tech-stack div {
@@ -36,8 +98,25 @@
 }
 
 .tech-stack span {
-    background-color: #eee;
+    background-color: var(--red-muted);
     padding: 5px 10px;
-    border-radius: 15px;
+    border-radius: 5px;
     font-size: 0.85em;
+}
+
+@keyframes openCard {
+    from {
+        max-height: 0px;
+        padding: 0 20px;
+        opacity: 0;
+        border: 1px solid transparent;
+        box-shadow: none;
+    }
+    to{
+        max-height: 1500px;
+        padding: 20px;
+        opacity: 1;
+        border: 1px solid var(--red-muted);
+        box-shadow: -10px -10px 15px rgba(8, 8, 8, 0.8);
+    }
 }
