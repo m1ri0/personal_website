@@ -3,31 +3,76 @@ import './ProjectShowcase.css';
 
 const projects = [
     {
-        id: 'neural-terminal',
+        id: 'nevermore',
         name: 'Nevermore/',
         tagline: 'Domains Threat Intelligence Feed',
         description: 'A Threat Intelligence Feed that aggregates useful informations about malicious domains in blocklists.',
-        longDescription: 'Each Domain is identified with their respective IP addresses, ASN, and geolocation, also providing the abuse type that the domain is associated with. Is a Open Source project that uses congregated blocklists to provide a comprehensive feed of malicious domains, helping security professionals and enthusiasts stay informed about potential threats.',
+        longDescription: 'Each Domain is identified with their respective IP addresses, ASN, and geolocation, also providing the abuse type that the domain is associated with. Is a Open Source project that uses congregated blocklists to provide a comprehensive feed of malicious domains, helping security professionals and enthusiasts stay informed about potential threats. This project was made in ACME! Cybersecurity Research laboratory with Financial support from the nic.br with Fundunesp.',
         tech: ['Python', 'Poetry', 'FastAPI', 'SLQAlchemy', 'Async processes', 'PostgreSQL', 'Docker'],
-        links: { github: 'https://github.com/acmecr/nevermore', demo: '#', docs: '#' },
+        links: { github: 'https://github.com/acmecr/nevermore/tree/nevermore_3', demo: 'https://dnscheck.acmesecurity.org' },
         color: '#ffcc2a',
-        gradient: 'linear-gradient(135deg, #ffcc2a 0%, #fffd38 100%)',
-        image: 'src/assets/nevermore.jpeg'
+        image: 'src/assets/nevermore.jpeg',
+        status: 'in_production'
     },
     {
-        id: 'devflow-cli',
-        name: 'devflow-cli',
-        tagline: 'Zero-config workflow automation for modern stacks',
-        description: 'Smart CLI that detects your project type and generates optimized CI/CD pipelines, dev containers, and deployment configs.',
-        longDescription: 'DevFlow analyzes your repository structure, dependencies, and frameworks to generate production-ready workflows. Supports monorepos, microservices, and serverless. Extensible plugin system for custom generators.',
-        tech: ['Node.js', 'Rust', 'TypeScript', 'Docker', 'GitHub Actions', 'Zod'],
-        stats: { stars: 1.8, forks: 94, issues: 5 },
-        links: { github: '#', demo: '#', docs: '#' },
-        color: '#00d4aa',
-        gradient: 'linear-gradient(135deg, #00d4aa 0%, #0099ff 100%)',
-        image: 'https://picsum.photos/seed/devflow-1/800/600'
+        id: 'cripto-cracker',
+        name: 'Cripto-Cracker/',
+        tagline: 'Crack Passwords using Distributed Systems',
+        description: 'Project for show how distributed systems works and can be used to crack passwords using brute force.',
+        longDescription: 'This project is a distributed system that uses Celery and Redis to distribute the workload of cracking passwords using brute force. It demonstrates how to scale a task across multiple workers, making it faster and more efficient. The system is built with FastAPI for the API layer, PostgreSQL for data storage, and Docker for containerization. It also includes cryptography techniques to handle password hashing and verification. \n This project was made for Distributed Systems class in the State University of São Paulo (UNESP).',
+        tech: ['Python', 'Celery', 'Redis', 'Docker', 'Distributed Systems', 'PostgresSQL', 'FastAPI', 'Criptography', 'Brute Force'],
+        links: { github: 'https://github.com/m1ri0/cryptographyCracker' },
+        color: '#00bf62',
+        image: 'src/assets/cripto_cracker.jpeg',
+        status: 'to_study'
+    },
+    {
+        id: 'chicos',
+        name: 'ChicOS/',
+        tagline: 'Emulated Operating System with GUI',
+        description: 'A simple emulated operating system with a graphical user interface, built using ncurses.',
+        longDescription: 'ChicOS is a simple emulated operating system that provides a graphical user interface (GUI) for users to interact with. It is built using the ncurses library, which allows for the creation of text-based user interfaces in a terminal. ChicOS includes basic functionalities such as file management, process management, and a simple shell. It serves as an educational project to demonstrate the concepts of operating systems and GUI development. \n This project was made for Operating Systems class in the State University of São Paulo (UNESP).',
+        tech: ['C', 'CMake','ncurses', 'Operating Systems', 'GUI', 'Emulation'],
+        links: { github: 'https://github.com/m1ri0/ChicOS' },
+        color: '#687d85',
+        image: 'src/assets/chicos.png',
+        status: 'to_study'
+    },
+    {
+        id: 'image-captioning',
+        name: 'Image_Captioning/',
+        tagline: 'Image Captioning using Machine Learning',
+        description: 'A machine learning project that generates descriptive captions for images using Convolutional Neural Network (CNN).',
+        longDescription: 'This project implements an image captioning model that uses a CNN to extract features from images and a auto-regressive transformer model to generate captions. The model is trained on the FlickR30k dataset, which contains images and their corresponding captions. The project demonstrates the application of machine learning techniques in computer vision and natural language processing. \n This project was made for Artificial Intelligence class in the State University of São Paulo (UNESP).',
+        tech: ['Python', 'PyTorch', 'TensorFlow', 'Keras', 'Machine Learning', 'CNN', 'Image Processing', 'FlickR30k'],
+        links: { github: 'https://github.com/m1ri0/image-captioning/tree/NAS' },
+        color: '#5c69b8',
+        image: 'src/assets/image-captioning.png',
+        status: 'to_study'
+    },
+    {
+        id: 'compiler-project',
+        name: 'Compiler/',
+        tagline: 'A simple compiler for a custom programming language',
+        description: 'A simple compiler that translates a custom programming language to accept the language.',
+        longDescription: 'This project implements a simple compiler that takes source code written in a custom programming language and accepts it. The compiler performs lexical analysis, syntax analysis and semantic analysis. It serves as an educational project to demonstrate the principles of compiler design and implementation. \n This project was made for Compilers class in the State University of São Paulo (UNESP).',
+        tech: ['C', 'Flex', 'CMake', 'Compiler', 'Lexical Analysis', 'Syntax Analysis', 'Semantic Analysis'],
+        links: { github: 'https://github.com/m1ri0/Parser' },
+        color: '#b7bdc3',
+        image: 'src/assets/compiler.png',
+        status: 'to_study'
     }
 ];
+
+const statusStyles = {
+    in_production: 'status-in-production',
+    to_study: 'status-to-study'
+};
+
+const statusLabels = {
+    in_production: 'IN PRODUCTION ●',
+    to_study: 'TO STUDY ◆',
+};
 
 export default function ProjectsShowcase() {
     const [activeId, setActiveId] = useState(null);
@@ -54,10 +99,13 @@ export default function ProjectsShowcase() {
                             }}
                         >
                             <div>
-                                <img calssName="project-svgfolder" src={activeId === project.id ? '../../public/folder-svgrepo-open.svg' : '../../public/folder-svgrepo-close.svg'} alt='closed-folder' />
+                                <img className="project-svgfolder" src={activeId === project.id ? '../../public/folder-svgrepo-open.svg' : '../../public/folder-svgrepo-close.svg'} alt='closed-folder' />
                                 </div>
-                            <div>
-                                <h3 style={{ margin: '0 0 5px 0' }}>{project.name}</h3>
+                            <div style={{ width: '100%' }}>
+                                <div className="project-card-header">
+                                    <h3>{project.name}</h3>
+                                    <span className={`project-status ${statusStyles[project.status]}`}>{statusLabels[project.status]}</span>
+                                </div>
                                 <p style={{ margin: 0, fontSize: '0.9em' }}>{project.tagline}</p>
                             </div>
                         </div>
@@ -80,6 +128,9 @@ export default function ProjectsShowcase() {
                                         </span>
                                     ))}
                                 </div>
+                                {activeProject.links.demo && (
+                                    <p>Project in production: <a href={activeProject.links.demo} target="_blank" rel="noopener noreferrer">{activeProject.links.demo}</a></p>
+                                )}
                             </div>
 
                             <img
@@ -96,10 +147,6 @@ export default function ProjectsShowcase() {
                     )}
                 </div>
 
-            </div>
-
-            <div className="showcase-footer">
-                <p>{projects.length} active repositories • <a href="#" target="_blank" rel="noopener noreferrer">View all on GitHub</a></p>
             </div>
         </div>
     );

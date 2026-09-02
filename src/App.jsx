@@ -1,10 +1,8 @@
 import { useState, useEffect } from 'react'
 import About from './components/about/about.jsx'
-//import Projects from './components/projects/projects.jsx'
 import Contact from './components/contact/contact.jsx'
 import MatrixHero from './components/MatrixHero/MatrixHero.jsx'
 import ProjectsShowcase from './components/projects/ProjectShowcase.jsx';
-//import ProjectsConstellation from './components/projects/ProjectsConstellation.jsx';
 import './App.css'
 
 function App() {
@@ -25,6 +23,7 @@ function App() {
         <div className="content-wrapper">
           <About />
           <ProjectsShowcase />
+          <Contact />
         </div>
       </section>
 
