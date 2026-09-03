@@ -9,11 +9,11 @@ export default function Footer() {
         <span className="footer-command">&gt; exit 0</span>
         
         <p className="footer-copyright">
-          &copy; {currentYear} Mário Lúcio. Todos os direitos reservados.
+          &copy; {currentYear} Mário Lúcio. All rights reserved.
         </p>
 
         <span className="footer-tech">
-          Desenvolvido com <span className="highlight">React</span> & <span className="highlight">CSS</span>
+          Developed with <span className="highlight">React</span> & <span className="highlight">CSS</span>
         </span>
       </div>
     </footer>
