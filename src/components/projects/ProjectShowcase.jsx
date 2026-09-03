@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import useScrollReveal from '../../hooks/useScrollReveal.jsx';
 import './ProjectShowcase.css';
 
 const projects = [
@@ -9,7 +10,7 @@ const projects = [
         description: 'A Threat Intelligence Feed that aggregates useful informations about malicious domains in blocklists.',
         longDescription: 'Each Domain is identified with their respective IP addresses, ASN, and geolocation, also providing the abuse type that the domain is associated with. Is a Open Source project that uses congregated blocklists to provide a comprehensive feed of malicious domains, helping security professionals and enthusiasts stay informed about potential threats. This project was made in ACME! Cybersecurity Research laboratory with Financial support from the nic.br with Fundunesp.',
         tech: ['Python', 'Poetry', 'FastAPI', 'SLQAlchemy', 'Async processes', 'PostgreSQL', 'Docker'],
-        links: { github: 'https://github.com/acmecr/nevermore/tree/nevermore_3', demo: 'https://dnscheck.acmesecurity.org' },
+        links: { github: 'https://github.com/acmecr/nevermore/tree/nevermore_3', demo: 'https://dnscheck.acmesecurity.org', demo_label: 'dnscheck.acmesecurity.org' },
         color: '#ffcc2a',
         image: 'src/assets/nevermore.jpeg',
         status: 'in_production'
@@ -75,11 +76,12 @@ const statusLabels = {
 };
 
 export default function ProjectsShowcase() {
+    useScrollReveal();
     const [activeId, setActiveId] = useState(null);
     const activeProject = projects.find(project => project.id === activeId);
 
     return (
-        <div className="projects-container">
+        <div className="projects-container reveal-on-scroll">
 
             <div className="projects-header">
                 <h2> ❯ ls <span className="projects-header-command">mario/projects/</span></h2>
@@ -129,7 +131,7 @@ export default function ProjectsShowcase() {
                                     ))}
                                 </div>
                                 {activeProject.links.demo && (
-                                    <p>Project in production: <a href={activeProject.links.demo} target="_blank" rel="noopener noreferrer">{activeProject.links.demo}</a></p>
+                                    <p>Project in production: <a href={activeProject.links.demo} target="_blank" rel="noopener noreferrer">{activeProject.links.demo_label}</a></p>
                                 )}
                             </div>
 

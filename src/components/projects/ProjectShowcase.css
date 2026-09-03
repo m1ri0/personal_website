@@ -144,7 +144,7 @@
         box-shadow: none;
     }
     to{
-        max-height: 1500px;
+        max-height: 1700px;
         padding: 20px;
         opacity: 1;
         border: 1px solid var(--red-muted);

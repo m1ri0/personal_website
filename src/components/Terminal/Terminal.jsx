@@ -10,7 +10,7 @@ export default function Terminal() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowText(true);
-    }, 3000); // 2.4s delay + 0.6s anim = 3s total
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);
