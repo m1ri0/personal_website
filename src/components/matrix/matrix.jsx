@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react';
-import Terminal from '../Terminal/Terminal.jsx';
-import './MatrixHero.css';
+import Terminal from '../terminal/terminal.jsx';
+import './matrix.css';
 
 export default function MatrixHero() {
   const canvasRef = useRef(null);

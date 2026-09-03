@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import useScrollReveal from '../../hooks/useScrollReveal.jsx';
-import './ProjectShowcase.css';
+import './projects.css';
 
 const projects = [
     {

@@ -5,7 +5,7 @@ import './contact.css';
 const contacts = [
     { type: 'email', label: 'mail', href: 'mailto:marioluciocollinettijr@hotmail.com', icon: 'public/mail-icon.svg', color: '#98230e' },
     { type: 'github', label: 'M1ri0', href: 'https://github.com/m1ri0', icon: 'public/git-icon.svg', color: '#333333' },
-    { type: 'linkedin', label: 'Mário Lúcio', href: 'https://linkedin.com/in/mario', icon: 'public/linkedin-icon.svg', color: '#0077b5' },
+    { type: 'linkedin', label: 'Mário Lúcio', href: 'https://www.linkedin.com/in/máriolúciojunior', icon: 'public/linkedin-icon.svg', color: '#0077b5' },
 ];
 
 const bootLines = [

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import './Terminal.css';
+import './terminal.css';
 
 export default function Terminal() {
   const [text, setText] = useState('');

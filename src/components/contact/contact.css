@@ -68,7 +68,7 @@
     content: '█';
     display: inline-block;
     margin-left: 4px;
-    color: #00ff88;
+    color: var(--red-primary);
     animation: blink 0.6s infinite;
 }
 
