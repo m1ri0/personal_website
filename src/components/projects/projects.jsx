@@ -77,7 +77,7 @@ const statusLabels = {
 
 export default function ProjectsShowcase() {
     useScrollReveal();
-    const [activeId, setActiveId] = useState(null);
+    const [activeId, setActiveId] = useState('nevermore');
     const activeProject = projects.find(project => project.id === activeId);
 
     return (
