@@ -12,7 +12,7 @@ const projects = [
         tech: ['Python', 'Poetry', 'FastAPI', 'SLQAlchemy', 'Async processes', 'PostgreSQL', 'Docker'],
         links: { github: 'https://github.com/acmecr/nevermore/tree/nevermore_3', demo: 'https://dnscheck.acmesecurity.org', demo_label: 'dnscheck.acmesecurity.org' },
         color: '#ffcc2a',
-        image: 'src/assets/nevermore.jpeg',
+        image: 'images/nevermore.jpeg',
         status: 'in_production'
     },
     {
@@ -24,7 +24,7 @@ const projects = [
         tech: ['Python', 'Celery', 'Redis', 'Docker', 'Distributed Systems', 'PostgresSQL', 'FastAPI', 'Criptography', 'Brute Force'],
         links: { github: 'https://github.com/m1ri0/cryptographyCracker' },
         color: '#00bf62',
-        image: 'src/assets/cripto_cracker.jpeg',
+        image: 'images/cripto_cracker.jpeg',
         status: 'to_study'
     },
     {
@@ -36,7 +36,7 @@ const projects = [
         tech: ['C', 'CMake','ncurses', 'Operating Systems', 'GUI', 'Emulation'],
         links: { github: 'https://github.com/m1ri0/ChicOS' },
         color: '#687d85',
-        image: 'src/assets/chicos.png',
+        image: 'images/chicos.png',
         status: 'to_study'
     },
     {
@@ -48,7 +48,7 @@ const projects = [
         tech: ['Python', 'PyTorch', 'TensorFlow', 'Keras', 'Machine Learning', 'CNN', 'Image Processing', 'FlickR30k'],
         links: { github: 'https://github.com/m1ri0/image-captioning/tree/NAS' },
         color: '#5c69b8',
-        image: 'src/assets/image-captioning.png',
+        image: 'images/image-captioning.png',
         status: 'to_study'
     },
     {
@@ -60,7 +60,7 @@ const projects = [
         tech: ['C', 'Flex', 'CMake', 'Compiler', 'Lexical Analysis', 'Syntax Analysis', 'Semantic Analysis'],
         links: { github: 'https://github.com/m1ri0/Parser' },
         color: '#b7bdc3',
-        image: 'src/assets/compiler.png',
+        image: 'images/compiler.png',
         status: 'to_study'
     }
 ];
@@ -101,7 +101,7 @@ export default function ProjectsShowcase() {
                             }}
                         >
                             <div>
-                                <img className="project-svgfolder" src={activeId === project.id ? '../../public/folder-svgrepo-open.svg' : '../../public/folder-svgrepo-close.svg'} alt='closed-folder' />
+                                <img className="project-svgfolder" src={activeId === project.id ? 'icons/folder-svgrepo-open.svg' : 'icons/folder-svgrepo-close.svg'} alt='closed-folder' />
                                 </div>
                             <div style={{ width: '100%' }}>
                                 <div className="project-card-header">
