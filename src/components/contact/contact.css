@@ -178,3 +178,30 @@
         filter: blur(0);
     }
 }
+
+@media (max-width: 768px) {
+    .contact-terminal {
+        padding: 0.5rem;
+    }
+
+    .contact-terminal-body {
+        padding: 0.8rem;
+    }
+
+    .contact-line {
+        white-space: normal;
+        font-size: 0.8rem;
+        animation: fadeIn 0.35s steps(45, end) forwards;
+    }
+
+    .contact-links {
+        justify-content: center;
+        margin-left: 0;
+        margin-top: 1.5rem;
+    }
+
+    .contact-method {
+        width: 100%;
+        justify-content: center;
+    }
+}

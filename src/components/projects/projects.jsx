@@ -80,6 +80,30 @@ export default function ProjectsShowcase() {
     const [activeId, setActiveId] = useState('nevermore');
     const activeProject = projects.find(project => project.id === activeId);
 
+    const renderProjectInfo = (project) => (
+        <div key={project.id} className="project-info">
+            <h2 style={{color: project.color}}>{project.name}</h2>
+            <p><strong>{project.description}</strong></p>
+            <p>{project.longDescription}</p>
+
+            <div className = "tech-stack">
+                <h4>Tecnologies:</h4>
+                <div>
+                    {project.tech.map(t => (
+                        <span key={t}>{t}</span>
+                    ))}
+                </div>
+                {project.links.demo && (
+                    <p>Project in production: <a href={project.links.demo} target="_blank" rel="noopener noreferrer">{project.links.demo_label}</a></p>
+                )}
+            </div>
+
+            <img src={project.image} alt={project.name} />
+
+            <p><a href={project.links.github} target="_blank" rel="noopener noreferrer">View on GitHub</a></p>
+        </div>
+    )
+
     return (
         <div className="projects-container reveal-on-scroll">
 
@@ -88,27 +112,37 @@ export default function ProjectsShowcase() {
             </div>
 
             <div className="projects-split-view">
+
                 <div className="projects-list">
                     {projects.map(project => (
-                        <div
-                            key={project.id}
-                            className={`project-card ${activeId === project.id ? 'active' : ''}`}
-                            onClick={() => setActiveId(project.id)}
-                            style={{
-                                background: activeId === project.id ? 'var(--red-muted)' : 'transparent',
-                                borderLeft: activeId === project.id ? '3px solid var(--red-primary)' : '3px solid var(--text-main)',
-                                borderWidth: activeId === project.id ? '5px' : '3px',
-                            }}
-                        >
-                            <div>
-                                <img className="project-svgfolder" src={activeId === project.id ? 'icons/folder-svgrepo-open.svg' : 'icons/folder-svgrepo-close.svg'} alt='closed-folder' />
+
+                        <div key={project.id} className="project-accordion-wrapper">
+
+                            <div
+                                className={`project-card ${activeId === project.id ? 'active' : ''}`}
+                                onClick={() => setActiveId(activeId === project.id ? null : project.id)}
+                                style={{
+                                    background: activeId === project.id ? 'var(--red-muted)' : 'transparent',
+                                    borderLeft: activeId === project.id ? '3px solid var(--red-primary)' : '3px solid var(--text-main)',
+                                    borderWidth: activeId === project.id ? '5px' : '3px',
+                                }}
+                            >
+                                <div>
+                                    <img className="project-svgfolder" src={activeId === project.id ? 'icons/folder-svgrepo-open.svg' : 'icons/folder-svgrepo-close.svg'} alt='closed-folder' />
+                                    </div>
+                                <div style={{ width: '100%' }}>
+                                    <div className="project-card-header">
+                                        <h3>{project.name}</h3>
+                                        <span className={`project-status ${statusStyles[project.status]}`}>{statusLabels[project.status]}</span>
+                                    </div>
+                                    <p style={{ margin: 0, fontSize: '0.9em' }}>{project.tagline}</p>
                                 </div>
-                            <div style={{ width: '100%' }}>
-                                <div className="project-card-header">
-                                    <h3>{project.name}</h3>
-                                    <span className={`project-status ${statusStyles[project.status]}`}>{statusLabels[project.status]}</span>
+                            </div>
+
+                            <div className={`project-info-mobile ${activeId === project.id ? 'open' : ''}`}>
+                                <div className="project-info-inner">
+                                    {renderProjectInfo(project)}
                                 </div>
-                                <p style={{ margin: 0, fontSize: '0.9em' }}>{project.tagline}</p>
                             </div>
                         </div>
                     ))}
@@ -116,35 +150,10 @@ export default function ProjectsShowcase() {
 
                 <div className="project-display-area">
                     {activeProject ? (
-                        <div key={activeProject.id} className="project-info">
-                            <h2 style={{color: activeProject.color}}>{activeProject.name}</h2>
-                            <p><strong>{activeProject.description}</strong></p>
-                            <p>{activeProject.longDescription}</p>
-
-                            <div className = "tech-stack">
-                                <h4>Tecnologies:</h4>
-                                <div>
-                                    {activeProject.tech.map(t => (
-                                        <span key={t}>
-                                            {t}
-                                        </span>
-                                    ))}
-                                </div>
-                                {activeProject.links.demo && (
-                                    <p>Project in production: <a href={activeProject.links.demo} target="_blank" rel="noopener noreferrer">{activeProject.links.demo_label}</a></p>
-                                )}
-                            </div>
-
-                            <img
-                                src={activeProject.image}
-                                alt={activeProject.name}
-                            />
-
-                            <p><a href={activeProject.links.github} target="_blank" rel="noopener noreferrer">View on Github</a></p>
-                        </div>
+                        renderProjectInfo(activeProject)
                     ) : (
                         <div className="empty-state">
-                            
+                            <h3 style={{ color: 'var(--text-muted)' }}>Select a project to view details</h3>
                         </div>
                     )}
                 </div>

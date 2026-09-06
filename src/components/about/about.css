@@ -108,8 +108,15 @@
     }
     
     .about-terminal,
+    .about-stats,
     .about-image {
         width: 100%;
+    }
+
+    .about-stats {
+        flex-wrap: wrap;
+        gap: 20px;
+        padding-bottom: 2vh;
     }
     
     .about-image img {

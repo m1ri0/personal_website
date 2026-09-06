@@ -21,7 +21,7 @@
     gap: 25px;
 }
 
-.projects-list img {
+.project-card img {
     width: 50px;
     height: 50px;
     margin-right: 10px;
@@ -135,6 +135,10 @@
     margin-top: 10px;
 }
 
+.project-info-mobile {
+    display: none;
+}
+
 @keyframes openCard {
     from {
         max-height: 0px;
@@ -149,5 +153,86 @@
         opacity: 1;
         border: 1px solid var(--red-muted);
         box-shadow: -10px -10px 15px rgba(8, 8, 8, 0.8);
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-split-view {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .projects-list,
+    .project-card-wrapper {
+        width: 100%;
+        flex: none;
+    }
+
+    .project-display-area {
+        display: none;
+        min-height: auto;
+    }
+
+    .project-info-mobile {
+        display: grid;
+        grid-template-rows: 0fr;
+        opacity: 0;
+        margin-top: -10px;
+        margin-bottom: 0px;
+        border: 1px solid transparent;
+        border-top: none;
+        border-radius: 0 0 8px 8px;
+        transition: grid-template-rows 0.4s ease-out,
+                    opacity 0.4s ease-out,
+                    margin 0.4s ease-out,
+                    border-color 0.4s ease-out,
+                    box-shadow 0.4s ease-out;
+    }
+
+    .project-info-mobile.open {
+        grid-template-rows: 1fr;
+        opacity: 1;
+        margin-bottom: 20px;
+        border: 1px solid var(--red-muted);
+        box-shadow: 0px 10px 15px rgba(8, 8, 8, 0.8);
+    }
+
+    .project-info-inner {
+        overflow: hidden;
+        min-height: 0;
+    }
+
+    .project-info-mobile .project-info {
+        animation: none;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    .project-info-mobile .project-info img {
+        width: 100%;
+        height: auto;
+        max-height: 250px;
+        object-fit: cover;
+        display: block;
+        margin: 15px 0;
+    }
+
+    @keyframes openCardMobile {
+        from {
+            max-height: 0px;
+            padding: 0 15px;
+            opacity: 0;
+            border: 1px solid transparent;
+            box-shadow: none;
+        }
+        to {
+            max-height: 2500px;
+            padding: 15px;
+            opacity: 1;
+            border: 1px solid var(--red-muted);
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0px 10px 15px rgba(8, 8, 8, 0.8);
+        }
     }
 }
