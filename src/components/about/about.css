@@ -103,7 +103,7 @@
 }
 
 @media (max-width: 768px) {
-    .about-header h2 {
+    .about-terminal-body h2 {
         font-size: 1.2rem;
         overflow-wrap: break-word;
         word-wrap: break-word;
