@@ -41,7 +41,7 @@ const projects = [
     },
     {
         id: 'image-captioning',
-        name: 'Image_Captioning/',
+        name: 'Image-Captioning/',
         tagline: 'Image Captioning using Machine Learning',
         description: 'A machine learning project that generates descriptive captions for images using Convolutional Neural Network (CNN).',
         longDescription: 'This project implements an image captioning model that uses a CNN to extract features from images and a auto-regressive transformer model to generate captions. The model is trained on the FlickR30k dataset, which contains images and their corresponding captions. The project demonstrates the application of machine learning techniques in computer vision and natural language processing. \n This project was made for Artificial Intelligence class in the State University of São Paulo (UNESP).',
