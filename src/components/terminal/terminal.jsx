@@ -5,7 +5,7 @@ export default function Terminal() {
   const [text, setText] = useState('');
   const [showText, setShowText] = useState(false);
 
-  const welcometext = "Welcome to Mário's portifolio!";
+  const welcometext = "Welcome to Mário's portfolio!";
 
   useEffect(() => {
     const timer = setTimeout(() => {

@@ -3,8 +3,6 @@ import About from './components/about/about.jsx'
 import Contact from './components/contact/contact.jsx'
 import MatrixHero from './components/matrix/matrix.jsx'
 import ProjectsShowcase from './components/projects/projects.jsx';
-import Certificates from './components/certificates/certificates.jsx';
-// import Stacks from './components/stacks/stacks.jsx';
 import Footer from './components/footer/footer.jsx'
 import './App.css'
 
