@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import useScrollReveal from '../../hooks/useScrollReveal.jsx';
 import './stacks.css';
 
 const skillsData = [
@@ -20,7 +21,8 @@ const skillsData = [
   }
 ];
 
-const Stacks = () => {
+export default function Stacks() {
+  useScrollReveal();
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleCategory = (index) => {
@@ -28,7 +30,7 @@ const Stacks = () => {
   };
 
   return (
-    <section className="stack-section" id="stacks">
+    <section className="stack-section reveal-on-scroll" id="stacks">
       <div className="stacks-container">
         
         <div className="stacks-header">
@@ -58,5 +60,3 @@ const Stacks = () => {
     </section>
   );
 };
-
-export default Stacks;
