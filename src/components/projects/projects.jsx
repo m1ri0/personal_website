@@ -13,7 +13,7 @@ const projects = [
         links: { github: 'https://github.com/acmecr/nevermore/tree/nevermore_3', demo: 'https://dnscheck.acmesecurity.org', demo_label: 'dnscheck.acmesecurity.org' },
         color: '#ffcc2a',
         image: 'images/nevermore.jpeg',
-        status: 'in_production'
+        status: 'deployed'
     },
     {
         id: 'cripto-cracker',
@@ -66,12 +66,12 @@ const projects = [
 ];
 
 const statusStyles = {
-    in_production: 'status-in-production',
+    deployed: 'status-deployed',
     to_study: 'status-to-study'
 };
 
 const statusLabels = {
-    in_production: 'IN PRODUCTION ●',
+    deployed: 'DEPLOYED ●',
     to_study: 'TO STUDY ◆',
 };
 
@@ -94,7 +94,7 @@ export default function ProjectsShowcase() {
                     ))}
                 </div>
                 {project.links.demo && (
-                    <p>Project in production: <a href={project.links.demo} target="_blank" rel="noopener noreferrer">{project.links.demo_label}</a></p>
+                    <p>Project deployed: <a href={project.links.demo} target="_blank" rel="noopener noreferrer">{project.links.demo_label}</a></p>
                 )}
             </div>
 

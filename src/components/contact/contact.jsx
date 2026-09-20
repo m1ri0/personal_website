@@ -5,7 +5,7 @@ import './contact.css';
 const contacts = [
     { type: 'email', label: 'mail', href: 'mailto:marioluciocollinettijr@hotmail.com', icon: '/icons/mail-icon.svg', color: '#98230e' },
     { type: 'github', label: 'M1ri0', href: 'https://github.com/m1ri0', icon: '/icons/git-icon.svg', color: '#333333' },
-    { type: 'linkedin', label: 'Mário Lúcio', href: 'https://www.linkedin.com/in/máriolúciojunior', icon: '/icons/linkedin-icon.svg', color: '#0077b5' },
+    { type: 'linkedin', label: 'Mário Lúcio', href: 'https://www.linkedin.com/in/mariocollinetti', icon: '/icons/linkedin-icon.svg', color: '#0077b5' },
 ];
 
 const bootLines = [
@@ -72,7 +72,7 @@ export default function Contact() {
 
     const handleClick = (contact, e) => {
         e.preventDefault();
-        navigator.clipboard.writeText(contact.label);
+        navigator.clipboard.writeText(contact.href);
         setCopied(contact.label);
         setTimeout(() => setCopied(null), 1500);
         

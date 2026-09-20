@@ -1,0 +1,98 @@
+.stack-section {
+  color: #ffffff;
+  font-family: 'Inter', sans-serif; /* Pode ajustar para a fonte Nerd Font ou outra que você já use */
+}
+
+.stacks-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.stacks-header {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.stacks-header h2 {
+  font-family: 'Fira Code', 'Courier New', Courier, monospace;
+}
+
+.stacks-header-command {
+    color: var(--text-main);
+    font-weight: 500;
+    text-shadow: 0 0 15px rgba(255, 42, 42, 0.8);
+}
+
+.stacks-subtitle {
+  text-align: left;
+  font-size: 1.1rem;
+  color: var(--red-muted);
+  margin-left: 2rem;
+  margin-bottom: 3rem;
+  margin-top: -0.6em;
+}
+
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.stack-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--red-muted);
+  border-radius: 0;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.stack-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 42, 42, 0.8);
+  border-color: var(--red-primary);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+  color: var(--text-main);
+  text-shadow: 0 0 10px rgba(255, 42, 42, 0.8);
+  border-bottom: 2px solid var(--red-muted);
+  padding-bottom: 0.5rem;
+}
+
+.skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-item {
+  font-family: 'Fira Code', 'Courier New', Courier, monospace;
+  background-color: var(--red-muted);
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: #cccccc;
+  transition: background-color 0.2s ease;
+}
+
+.stack-card:hover .skill-item {
+  background-color: #7c0000;
+}
+
+@media (max-width: 600px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .stack-grid {
+    grid-template-columns: 1fr;
+  }
+}

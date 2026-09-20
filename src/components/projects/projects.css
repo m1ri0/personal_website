@@ -1,5 +1,5 @@
 .projects-header h2 {
-    font-family: 'Fira Code', 'Courier New', Courier, monospace;;
+    font-family: 'Fira Code', 'Courier New', Courier, monospace;
 }
 
 .projects-header-command {
@@ -100,7 +100,7 @@
     font-size: 0.7rem;
 }
 
-.status-in-production {
+.status-deployed {
     color: #00ff88;
     font-size: 0.7rem;
 }
@@ -185,7 +185,6 @@
         display: grid;
         grid-template-rows: 0fr;
         opacity: 0;
-        margin-top: -10px;
         margin-bottom: 0px;
         border: 1px solid transparent;
         border-top: none;
