@@ -1,11 +1,11 @@
 .stack-section {
   color: #ffffff;
-  font-family: 'Inter', sans-serif; /* Pode ajustar para a fonte Nerd Font ou outra que você já use */
+  font-family: 'Inter', sans-serif;
 }
 
 .stacks-container {
-  max-width: 1000px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .stacks-header {
@@ -87,7 +87,7 @@
   background-color: #7c0000;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .section-title {
     font-size: 2rem;
   }
